@@ -67,9 +67,10 @@ O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétric
 Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na conversão de calor em eletricidade. Por isso, materiais avançados como ligas de bismuto-telúrio são frequentemente usados em módulos Peltier de alta eficiência.
 
 ## 🔌 Componentes
-<img src="assets/componentes.png" width="60%" alt="Componentes"/>
+<img src="assets/componentes-circuito.png" width="60%" alt="Componentes"/>
 
 - 1 ESP32
+- 1 Protoboard
 - 3 Pastilhas Peltiers TEC1-12706
 - 2 Sensores Encapsulados de Temperatura DS18B20
 - 1 Sensor de Tensão DC 0-25V
@@ -79,12 +80,17 @@ Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na c
 - 1 Rolo de Barbante
 - 1 Placa de Isopor
 - 1 Power Bank
+- Jumper Cables
 
 ## ⚒️ Montagem
 <div>
  <img src="assets/circuito.jpg" width="45%" alt="Circuito"/>
  <img src="assets/maquete.jpg" width="48%" alt="Maquete"/>
 </div>
+
+<br>
+
+Criamos um protótipo que demonstra como a energia pode ser gerada de forma sustentável utilizando o diferencial de temperatura. O sistema utiliza as pastilhas Peltier posicionadas entre os dois recipientes (formas de bolo feitas de alumínio): um com água quente e outro com água fria. O calor da água quente aquece um lado das pastilhas, enquanto a água fria resfria o outro, criando um gradiente térmico que gera energia elétrica. No protótipo, essa energia é usada para alimentar um pisca-pisca instalado na cerca de uma casinha, ilustrando o funcionamento do sistema de forma prática. Para criar o monitoramento, utilizamos um ESP32 abastecido por um Power Bank, que registra as temperaturas dos recipientes com sensores DS18B20 e mede a tensão gerada por meio de um sensor DC 0-25V. Os dados são exibidos em tempo real em um display LCD, permitindo acompanhar a eficiência do sistema enquanto ele funciona.
 
 ## 📁 Estrutura de pastas
 
