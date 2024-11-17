@@ -34,66 +34,38 @@ A pastilha de Peltier foi escolhida como a tecnologia central do projeto devido 
 ## Como Funciona a Geração de Energia com a Pastilha de Peltier? 🌡️❄️
 A pastilha de Peltier (ou módulo termoelétrico) é um dispositivo que pode funcionar de duas maneiras:
 
-- Gerador Termoelétrico (Modo Seebeck):
+- **Gerador Termoelétrico (Modo Seebeck):**
 Quando há uma diferença de temperatura (Δ𝑇) entre suas faces, a pastilha converte esse gradiente térmico em energia elétrica, gerando uma tensão proporcional à diferença de temperatura. Este fenômeno é utilizado em aplicações de geração de energia a partir de calor residual.
-- Bomba de Calor (Modo Peltier):
+- **Bomba de Calor (Modo Peltier):**
 Ao aplicar uma corrente elétrica, o módulo transfere calor de uma face para a outra, criando uma diferença de temperatura. Essa propriedade é utilizada para aquecer ou resfriar superfícies, sendo comum em sistemas de refrigeração compactos (como bebedouros ou purificadores de água).
 
+<br>
 <img src="assets/peltier-diagram-fiap.png" width="30%" alt="Diagrama Peltier"/>
 
 _Em ambas as funções, a eficiência da pastilha depende das propriedades termoelétricas dos materiais utilizados e do coeficiente de Seebeck, que mede a relação entre a diferença de temperatura e a tensão gerada._
+<br>
 
-No nosso projeto, a pastilha funciona no modo Seebeck. Aqui está o funcionamento básico:
-A pastilha é composta por dois tipos de semicondutores, chamados N-type (rico em elétrons) e P-type (pobre em elétrons).
-Quando uma das superfícies da pastilha é aquecida (e a outra permanece fria), cria-se uma diferença de temperatura (ΔT).
-Essa diferença de temperatura provoca um movimento de elétrons através dos semicondutores, gerando uma corrente elétrica. Esse fenômeno é conhecido como efeito Seebeck.
+No nosso projeto, a pastilha funciona no **modo Seebeck**. A pastilha é composta por dois tipos de semicondutores, chamados N-type (rico em elétrons) e P-type (pobre em elétrons). Quando uma das superfícies da pastilha é aquecida (e a outra permanece fria), cria-se uma diferença de temperatura (ΔT). Essa diferença de temperatura provoca um movimento de elétrons através dos semicondutores, gerando uma corrente elétrica. Esse fenômeno é conhecido como efeito Seebeck.
+
 No caso do nosso projeto:
-
 O calor gerado por águas aquecidas (como em fontes termais ou reservatórios aquecidos pelo sol) aquece um lado da pastilha.
 O outro lado da pastilha é resfriado por água fria (como em um reservatório isolado ou refrigerado).
 A diferença de temperatura gera eletricidade, que pode ser armazenada em baterias ou usada diretamente para alimentar dispositivos.
-O que é o Coeficiente Seebeck?
-O coeficiente Seebeck (S) é uma propriedade intrínseca dos materiais termoelétricos, que determina a eficiência com que eles convertem uma diferença de temperatura em energia elétrica. Ele é medido em microvolts por kelvin (µV/K) e representa a tensão elétrica gerada por cada unidade de diferença de temperatura entre os dois lados do material.
 
-Matematicamente, a tensão gerada 
-V
-V pela pastilha de Peltier pode ser expressa como:
+<br>
+<img src="assets/peltier.png" width="40%" alt="Interior Peltier"/>
 
-V
-=
-S
-⋅
-Δ
-T
-V=S⋅ΔT
-Onde:
+## O que é o Coeficiente Seebeck? 🧮
+O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétricos, que determina a eficiência com que eles convertem uma diferença de temperatura em energia elétrica. Ele é medido em **microvolts por kelvin (µV/K)** e representa a tensão elétrica gerada por cada unidade de diferença de temperatura entre os dois lados do material.
 
-S
-S é o coeficiente Seebeck.
-Δ
-T
-ΔT é a diferença de temperatura entre os dois lados da pastilha.
-Exemplo: Se o coeficiente Seebeck de um material for 200 µV/K e a diferença de temperatura entre os lados for de 100 K, a tensão gerada será:
+### Matematicamente, a tensão gerada (V) pela pastilha de Peltier pode ser expressa como:
 
-V
-=
-200
-×
-1
-0
-−
-6
-⋅
-100
-=
-0
-,
-02
- 
-volts
-V=200×10 
-−6
- ⋅100=0,02volts
+<img src="assets/seebeck.png" width="40%" alt="Fórmula Seebeck"/>
+
+### Onde:
+- S é o coeficiente Seebeck.
+- ΔT é a diferença de temperatura entre os dois lados da pastilha.
+
 Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na conversão de calor em eletricidade. Por isso, materiais avançados como ligas de bismuto-telúrio são frequentemente usados em módulos Peltier de alta eficiência.
 
 
