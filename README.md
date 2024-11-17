@@ -1,4 +1,4 @@
-# Global Solution Green Energy 🌱⚡
+# 🌱⚡ Global Solution Green Energy 
 
 <p align="center">
 <a href=""><img src="assets/samepy-logo.png" alt="Samepy Logo" border="0" width=60%></a>
@@ -21,7 +21,7 @@
 <a href="https://www.linkedin.com/in/pmarcotti/"><img src="assets/marcotti.jpg" alt="Paulo Marcott" width="150px"></a>
 </div>
 
-# SamepyEco: Gerador Termoelétrico Sustentável ♻️
+# ♻️ SamepyEco: Gerador Termoelétrico Sustentável 
 
 ## 📜 Descrição
 
@@ -31,7 +31,7 @@ A ideia da geração de energia termoelétrica sustentável surgiu a partir do t
 
 A pastilha de Peltier foi escolhida como a tecnologia central do projeto devido à sua capacidade de converter diferenças de temperatura diretamente em energia elétrica. Isso, aliado à possibilidade de escalabilidade em aplicações como sistemas solares, termas, indústrias, ou até residências, tornou o conceito especialmente relevante no contexto de preservação ambiental e sustentabilidade energética.
 
-## Como Funciona a Geração de Energia com a Pastilha de Peltier? 🌡️❄️
+## 🌡️❄️ Como Funciona a Geração de Energia com a Pastilha de Peltier? 
 A pastilha de Peltier (ou módulo termoelétrico) é um dispositivo que pode funcionar de duas maneiras:
 
 - **Gerador Termoelétrico (Modo Seebeck):**
@@ -65,6 +65,8 @@ O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétric
 - ΔT é a diferença de temperatura entre os dois lados da pastilha.
 
 Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na conversão de calor em eletricidade. Por isso, materiais avançados como ligas de bismuto-telúrio são frequentemente usados em módulos Peltier de alta eficiência.
+
+## 
 
 ## 📁 Estrutura de pastas
 
