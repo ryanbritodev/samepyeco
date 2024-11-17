@@ -47,9 +47,7 @@ _Em ambas as funções, a eficiência da pastilha depende das propriedades termo
 
 No nosso projeto, a pastilha funciona no **modo Seebeck**. A pastilha é composta por dois tipos de semicondutores, chamados N-type (rico em elétrons) e P-type (pobre em elétrons). Quando uma das superfícies da pastilha é aquecida (e a outra permanece fria), cria-se uma diferença de temperatura (ΔT). Essa diferença de temperatura provoca um movimento de elétrons através dos semicondutores, gerando uma corrente elétrica. Esse fenômeno é conhecido como efeito Seebeck.
 
-No caso do nosso projeto:
-O calor gerado por águas aquecidas (como em fontes termais ou reservatórios aquecidos pelo sol) aquece um lado da pastilha.
-O outro lado da pastilha é resfriado por água fria (como em um reservatório isolado ou refrigerado).
+No caso do nosso projeto, o calor gerado por águas aquecidas (como em fontes termais ou reservatórios aquecidos pelo sol) aquece um lado da pastilha, enquanto o outro lado é resfriado por água fria ou em temperatura ambiente (como em um reservatório isolado ou refrigerado).
 A diferença de temperatura gera eletricidade, que pode ser armazenada em baterias ou usada diretamente para alimentar dispositivos.
 
 <br>
@@ -67,9 +65,6 @@ O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétric
 - ΔT é a diferença de temperatura entre os dois lados da pastilha.
 
 Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na conversão de calor em eletricidade. Por isso, materiais avançados como ligas de bismuto-telúrio são frequentemente usados em módulos Peltier de alta eficiência.
-
-
-
 
 ## 📁 Estrutura de pastas
 
