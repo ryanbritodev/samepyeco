@@ -53,7 +53,7 @@ A diferença de temperatura gera eletricidade, que pode ser armazenada em bateri
 <br>
 <img src="assets/peltier.png" width="40%" alt="Interior Peltier"/>
 
-## O que é o Coeficiente Seebeck? 🧮
+## 🧮 O que é o Coeficiente Seebeck?
 O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétricos, que determina a eficiência com que eles convertem uma diferença de temperatura em energia elétrica. Ele é medido em **microvolts por kelvin (µV/K)** e representa a tensão elétrica gerada por cada unidade de diferença de temperatura entre os dois lados do material.
 
 ### Matematicamente, a tensão gerada (V) pela pastilha de Peltier pode ser expressa como:
