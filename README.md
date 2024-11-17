@@ -84,8 +84,9 @@ Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na c
 
 ## ⚒️ Montagem
 <div>
- <img src="assets/circuito.jpg" width="45%" alt="Circuito"/>
- <img src="assets/maquete.jpg" width="48%" alt="Maquete"/>
+ <img src="assets/circuito.jpg" width="35%" alt="Circuito"/>
+ <img src="assets/maquete.jpg" width="37.5%" alt="Protótipo"/>
+ <img src="assets/peltier-pasta.jpg" width="14.1%" alt="Peltier com Pasta Térmica"/>
 </div>
 
 <br>
