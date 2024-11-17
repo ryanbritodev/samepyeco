@@ -66,7 +66,22 @@ O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétric
 
 Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na conversão de calor em eletricidade. Por isso, materiais avançados como ligas de bismuto-telúrio são frequentemente usados em módulos Peltier de alta eficiência.
 
-## 
+## 🔌 Componentes
+<img src="assets/componentes.png" width="60%" alt="Componentes"/>
+
+- 1 ESP32
+- 3 Pastilhas Peltiers TEC1-12706
+- 2 Sensores Encapsulados de Temperatura DS18B20
+- 1 Sensor de Tensão DC 0-25V
+- 1 Display LCD I2C
+- 2 Recipientes de Alumínio
+- 1 Pasta Térmica
+- 1 Rolo de Barbante
+- 1 Placa de Isopor
+- 1 Power Bank
+
+## ⚒️ Montagem
+<img src="assets/circuito.jpg" width="60%" alt="Circuito"/>
 
 ## 📁 Estrutura de pastas
 
