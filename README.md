@@ -81,7 +81,10 @@ Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na c
 - 1 Power Bank
 
 ## ⚒️ Montagem
-<img src="assets/circuito.jpg" width="60%" alt="Circuito"/>
+<div>
+ <img src="assets/circuito.jpg" width="45%" alt="Circuito"/>
+ <img src="assets/maquete.jpg" width="48%" alt="Maquete"/>
+</div>
 
 ## 📁 Estrutura de pastas
 
