@@ -5,19 +5,23 @@
    <a href="https://www.fiap.com.br/graduacao/global-solution/"><img src="assets/green-energy.svg" alt="Green Energy Logo" border="0" width=38%></a>
    </p>
    
-   # SamepyEco: Gerador Termoelétrico Sustentável
+   ## 👨🏻‍💻 Equipe:
+   - Diogo Leles Franciulli, RM558487
+   - Felipe Sousa de Oliveira, RM559085
+   - Ryan Brito Pereira Ramos, RM554497
+   <div style="display: flex;">
+       <a href="https://www.linkedin.com/in/diogo-leles-franciulli/"><img src="assets/diogo.jpg" alt="Diogo Leles Franciulli" width="150px"></a>
+       <a href="https://www.linkedin.com/in/ulipese/"><img src="assets/felipe.jpg" alt="Felipe Sousa de Oliveira" width="150px"></a>
+       <a href="https://www.linkedin.com/in/ryanbritodev"><img src="assets/ryan.jpg" alt="Ryan Brito Pereira Ramos" width="150px"></a>
+   </div>
    
-   ## 👨🏻‍💻 Equipe: 
-   - <a href="https://www.linkedin.com/company/inova-fusca">Diogo Leles Franciulli</a>
-   - <a href="https://www.linkedin.com/company/inova-fusca">Felipe Sousa de Oliveira</a>
-   - <a href="https://www.linkedin.com/company/inova-fusca">Ryan Brito Pereira Ramos</a> 
-   
-   ## 👩‍🏫 Professores:
-   ### Tutor(a) 
-   - <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
-   ### Coordenador(a)
-   - <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
-   
+   ## 👨🏻‍🏫 Professor: 
+   - Paulo Marcotti, PF2150
+   <div style="display: flex;">
+   <a href="https://www.linkedin.com/in/pmarcotti/"><img src="assets/marcotti.jpg" alt="Paulo Marcott" width="150px"></a>
+   </div>
+
+   # SAMEPYECO: GERADOR TERMOELÉTRICO SUSTENTÁVEL 🌡️❄️
    
    ## 📜 Descrição
    
