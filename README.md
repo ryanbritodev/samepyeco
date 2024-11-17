@@ -34,10 +34,14 @@ A pastilha de Peltier foi escolhida como a tecnologia central do projeto devido 
 ## Como Funciona a Geração de Energia com a Pastilha de Peltier? 🌡️❄️
 A pastilha de Peltier (ou módulo termoelétrico) é um dispositivo que pode funcionar de duas maneiras:
 
-- Como gerador termoelétrico (modo Seebeck): converte diferenças de temperatura em energia elétrica.
-- Como bomba de calor (modo Peltier): transfere calor entre suas superfícies usando energia elétrica.
+- Gerador Termoelétrico (Modo Seebeck):
+Quando há uma diferença de temperatura (Δ𝑇) entre suas faces, a pastilha converte esse gradiente térmico em energia elétrica, gerando uma tensão proporcional à diferença de temperatura. Este fenômeno é utilizado em aplicações de geração de energia a partir de calor residual.
+- Bomba de Calor (Modo Peltier):
+Ao aplicar uma corrente elétrica, o módulo transfere calor de uma face para a outra, criando uma diferença de temperatura. Essa propriedade é utilizada para aquecer ou resfriar superfícies, sendo comum em sistemas de refrigeração compactos (como bebedouros ou purificadores de água).
 
 <img src="assets/peltier-diagram-fiap.png" width="30%" alt="Diagrama Peltier"/>
+
+_Em ambas as funções, a eficiência da pastilha depende das propriedades termoelétricas dos materiais utilizados e do coeficiente de Seebeck, que mede a relação entre a diferença de temperatura e a tensão gerada._
 
 No nosso projeto, a pastilha funciona no modo Seebeck. Aqui está o funcionamento básico:
 A pastilha é composta por dois tipos de semicondutores, chamados N-type (rico em elétrons) e P-type (pobre em elétrons).
