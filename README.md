@@ -45,7 +45,6 @@ O SamepyEco pode ser aplicado em diferentes contextos:
 - **Industrial:** Grandes instalações para recuperação de calor residual.
 - **Rural:** Estações de geração de energia em regiões remotas, usando calor solar.
 
-
 ## 🌡️❄️ Como Funciona a Geração de Energia com a Pastilha de Peltier? 
 A pastilha de Peltier (ou módulo termoelétrico) é um dispositivo que pode funcionar de duas maneiras:
 
@@ -103,14 +102,20 @@ Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na c
 
 ## ⚒️ Montagem
 <div>
- <img src="assets/circuito.jpg" width="35%" alt="Circuito"/>
- <img src="assets/maquete.jpg" width="37.5%" alt="Protótipo"/>
- <img src="assets/peltier-pasta.jpg" width="14.1%" alt="Peltier com Pasta Térmica"/>
+ <img src="assets/prototipo-gs.jpg" width="37.5%" alt="Protótipo"/>
+ <img src="assets/prototipo-lcd.jpg" width="40.3%" alt="Protótipo com LCD"/>
 </div>
 
 <br>
 
 Criamos um protótipo que demonstra como a energia pode ser gerada de forma sustentável utilizando o diferencial de temperatura. O sistema utiliza as pastilhas Peltier posicionadas entre os dois recipientes (formas de bolo feitas de alumínio): um com água quente e outro com água fria. O calor da água quente aquece um lado das pastilhas, enquanto a água fria resfria o outro, criando um gradiente térmico que gera energia elétrica (entre os recipientes, utilizamos uma pasta térmica que auxilia na troca de calor). No protótipo, essa energia é usada para alimentar um pisca-pisca instalado na cerca de uma casinha, ilustrando o funcionamento do sistema de forma prática. Para criar o monitoramento, utilizamos um ESP32 abastecido por um Power Bank, que registra as temperaturas dos recipientes com sensores DS18B20 e mede a tensão gerada por meio de um sensor DC 0-25V. Os dados são exibidos em tempo real em um display LCD e enviados através do protocolo HTTP ao ThingSpeak, permitindo acompanhar a eficiência do sistema em tempo real enquanto ele funciona.
+
+<br>
+
+<div>
+ <img src="assets/circuito-gs.jpg" width="35%" alt="Circuito"/>
+ <img src="assets/peltier-pasta.jpg" width="14.8%" alt="Peltier com Pasta Térmica"/>
+</div>
 
 ## 📊 Canal de Processamento de Dados no Thingspeak
 <div>
