@@ -359,10 +359,15 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 ```
 
 ## 📖 Referências:
+- Como Utilizar o Sensor DS18B20 com Arduino e ESP32 – Tutorial Completo: https://www.youtube.com/watch?v=Vy650KLXIyY&t=36s
+- Como utilizar Sensor de Tensão 0-25V DC e Como fazer Voltímetro com Arduino - Tutorial 50: https://www.youtube.com/watch?v=Kw7VUpQ-2vY&t=2s
+- COMO GERAR ENERGIA só com água (GERADOR TERMOELÉTRICO): https://youtu.be/wLrXYMJs-q8?si=RZjFwoTbGtvumNiv
+- GERADOR DE ENERGIA CASEIRO COM PASTILHAS PELTIER, EFEITO SEEBECK - PARTE 1: https://youtu.be/0HuZBaha4aI?si=aWUscF2hDZLagFlF
+- Pequeno Dispositivo Para Puxar Água Acionado por Mine Gerador Termoelétrico: https://youtu.be/6PZ9-6zow2M?si=0dqdfydpMLmBOOF0
 
 
 ## 🫱🏻‍🫲🏻 Agradecimentos
 - Gostaríamos de agradecer à **FIAP** e ao professor **Paulo Marcotti** pela oportunidade incrível de realizar esse projeto.
 
-## Licença
+## 🧾 Licença
 Este projeto está licenciado sob a **Licença MIT** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
