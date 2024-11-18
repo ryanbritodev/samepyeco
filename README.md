@@ -129,7 +129,6 @@ Nosso sistema integra o monitoramento local com o envio de dados para a platafor
 
 <img src="assets/arduino-ide.png" width="60%" alt="Arduino IDE"/>
 
-
 Para executar o código do sistema SamepyEco no ESP32 utilizando a Arduino IDE, é necessário instalar e incluir uma série de bibliotecas que fornecem suporte para conexão Wi-Fi, comunicação com APIs, manipulação de sensores, exibição de dados em displays LCD e tratamento de dados JSON. Abaixo estão listadas as dependências necessárias:
 
 - WiFi (<WiFi.h>)
@@ -156,6 +155,8 @@ No início do código, adicione todas as bibliotecas previamente instaladas:
 ```
 
 ## 💻⚙️ Código
+### [Circuito feito no Simulador Wokwi](https://wokwi.com/projects/414535310108324865)
+<img src="assets/wokwi.png" width="60%" alt="Wokwi Simulation"/>
 
 O código principal utilizado no ESP32 foi desenvolvido em C++, e é responsável por criar o algoritmo que realiza a leitura de todos os dados, enviando através de uma conexão Wi-Fi, para nuvem no Thingspeak. Aqui está o código utilizado no projeto:
 
@@ -168,14 +169,14 @@ O código principal utilizado no ESP32 foi desenvolvido em C++, e é responsáve
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-const char* ssid = "Wokwi-GUEST";
+const char* ssid = "";
 const char* password = "";
 
-String apiKey = "6b3c4fe6ffa348d7958c0fa2ac0acfd4";
+String apiKey = "";
 String serverName = "http://api.ipgeolocation.io/ipgeo?apiKey=" + apiKey;
 
 const char* thingspeakURL = "http://api.thingspeak.com/update";
-String thingspeakApiKey = "SSIVNUFSSLRC9EZQ";
+String thingspeakApiKey = "";
 
 const int tempPinFria = 2;
 const int tempPinQuente = 4;
