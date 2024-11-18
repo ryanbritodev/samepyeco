@@ -359,6 +359,7 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 ```
 
 ## 📖 Referências:
+- Site Oficial Global Solution Green Energy: https://www.fiap.com.br/graduacao/global-solution/
 - Como Utilizar o Sensor DS18B20 com Arduino e ESP32 – Tutorial Completo: https://www.youtube.com/watch?v=Vy650KLXIyY&t=36s
 - Como utilizar Sensor de Tensão 0-25V DC e Como fazer Voltímetro com Arduino - Tutorial 50: https://www.youtube.com/watch?v=Kw7VUpQ-2vY&t=2s
 - COMO GERAR ENERGIA só com água (GERADOR TERMOELÉTRICO): https://youtu.be/wLrXYMJs-q8?si=RZjFwoTbGtvumNiv
