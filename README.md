@@ -115,7 +115,7 @@ Nosso sistema integra o monitoramento local com o envio de dados para a platafor
 #### Tensão Gerada:
 - O sensor de tensão DC 0-25V mede a energia elétrica gerada pelas pastilhas. Esse valor também é processado pelo ESP32.
 
-## 🔗 Fields:
+## 🔗 Canal e Fields
 ### [Canal SamepyEco no Thingspeak](https://thingspeak.mathworks.com/channels/2738000)
 - Field 1: Latitude
 - Field 2: Longitude
@@ -125,41 +125,222 @@ Nosso sistema integra o monitoramento local com o envio de dados para a platafor
 - Field 6: Temperatura (Água Quente)
 - Field 7: Tensão
 
-## 📁 Estrutura de pastas
+## 📁 Dependências
 
-Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
-
-- <b>.github</b>: Nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
-
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
-
-- <b>config</b>: Posicione aqui arquivos de configuração que são usados para definir parâmetros e ajustes do projeto.
-
-- <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
-
-- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
-
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
-
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
-
-## 🔧 Como executar o código
-
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
+<img src="assets/arduino-ide.png" width="60%" alt="Arduino IDE"/>
 
 
-## 🗃 Histórico de lançamentos
+Para executar o código do sistema SamepyEco no ESP32 utilizando a Arduino IDE, é necessário instalar e incluir uma série de bibliotecas que fornecem suporte para conexão Wi-Fi, comunicação com APIs, manipulação de sensores, exibição de dados em displays LCD e tratamento de dados JSON. Abaixo estão listadas as dependências necessárias:
 
-* 0.5.0 - XX/XX/2024
- * 
-* 0.4.0 - XX/XX/2024
- * 
-* 0.3.0 - XX/XX/2024
- * 
-* 0.2.0 - XX/XX/2024
- * 
-* 0.1.0 - XX/XX/2024
- *
+- WiFi (<WiFi.h>)
+- HTTPClient (<HTTPClient.h>)
+- ArduinoJson (<ArduinoJson.h>)
+- OneWire (<OneWire.h>)
+- DallasTemperature (<DallasTemperature.h>)
+- Wire (<Wire.h>)
+- LiquidCrystal I2C (<LiquidCrystal_I2C.h>)
+
+Dentro do Arduino IDE, navegue entres os menus:
+**Sketch → Incluir Biblioteca → Gerenciar Bibliotecas....**
+No gerenciador de bibliotecas, pesquise pelos nomes das dependências acima (ex.: WiFi, HTTPClient, ArduinoJson) e clique em **Instalar**!
+
+No início do código, adicione todas as bibliotecas previamente instaladas:
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <ArduinoJson.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+```
+
+## 💻⚙️ Código
+
+O código principal utilizado no ESP32 foi desenvolvido em C++, e é responsável por criar o algoritmo que realiza a leitura de todos os dados, enviando através de uma conexão Wi-Fi, para nuvem no Thingspeak. Aqui está o código utilizado no projeto:
+
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <ArduinoJson.h>
+#include <DallasTemperature.h>
+#include <OneWire.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+const char* ssid = "Wokwi-GUEST";
+const char* password = "";
+
+String apiKey = "6b3c4fe6ffa348d7958c0fa2ac0acfd4";
+String serverName = "http://api.ipgeolocation.io/ipgeo?apiKey=" + apiKey;
+
+const char* thingspeakURL = "http://api.thingspeak.com/update";
+String thingspeakApiKey = "SSIVNUFSSLRC9EZQ";
+
+const int tempPinFria = 2;
+const int tempPinQuente = 4;
+OneWire oneWireFria(tempPinFria);
+OneWire oneWireQuente(tempPinQuente);
+DallasTemperature sensorFria(&oneWireFria);
+DallasTemperature sensorQuente(&oneWireQuente);
+
+#define sinalSensor 19 
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+byte fria[8] = { 0b01110, 0b01010, 0b01010, 0b01010, 0b10001, 0b11111, 0b11111, 0b01110 };
+byte quente[8] = { 0b01110, 0b01010, 0b01110, 0b01110, 0b11111, 0b11111, 0b11111, 0b01110 };
+uint8_t tensao[] = { 0x0e, 0x1b, 0x11, 0x1f, 0x1f, 0x1f, 0x1f, 0x1f };
+byte raio[8] = { 0b00010, 0b00110, 0b01100, 0b11111, 0b11111, 0b00110, 0b01100, 0b01000 };
+byte pin[8] = { 0b01110, 0b11111, 0b11111, 0b01110, 0b00100, 0b00100, 0b00100, 0b00100 };
+
+void mostrarLCD(String titulo, float valor, int tipo);
+void mostrarLocalizacao(String country, String city);
+void enviarParaThingSpeak(float latitude, float longitude, String city, String country, float tempFria, float tempQuente, float voltage);
+
+void setup() {
+  Serial.begin(115200);
+
+  sensorFria.begin();
+  sensorQuente.begin();
+
+  lcd.init();
+  lcd.backlight();
+  lcd.createChar(0, fria);
+  lcd.createChar(1, quente);
+  lcd.createChar(2, tensao);
+  lcd.createChar(3, raio);
+  lcd.createChar(4, pin);
+  lcd.setCursor(0, 0);
+  lcd.print("Global  Solution");
+  lcd.setCursor(0, 1);
+  lcd.write((byte)3);
+  lcd.print(" Green Energy ");
+  lcd.write((byte)3);
+  delay(3000);
+  lcd.clear();
+
+  Serial.print("Conectando-se ao Wi-Fi ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nConectado ao Wi-Fi!");
+}
+
+void loop() {
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    http.begin(serverName);
+    int httpResponseCode = http.GET();
+    if (httpResponseCode > 0) {
+      String payload = http.getString();
+      StaticJsonDocument<1024> doc;
+      DeserializationError error = deserializeJson(doc, payload);
+
+      if (!error) {
+        String country = doc["country_name"].as<String>();
+        String city = doc["city"].as<String>();
+        float latitude = doc["latitude"];
+        float longitude = doc["longitude"];
+
+        Serial.println("Dados obtidos com sucesso!");
+        Serial.print("País: "); Serial.println(country);
+        Serial.print("Cidade: "); Serial.println(city);
+        Serial.print("Latitude: "); Serial.println(latitude, 6);
+        Serial.print("Longitude: "); Serial.println(longitude, 6);
+
+        sensorFria.requestTemperatures();
+        float temperaturaFria = sensorFria.getTempCByIndex(0);
+        Serial.print("Temp. Água Fria: "); Serial.println(temperaturaFria);
+
+        sensorQuente.requestTemperatures();
+        float temperaturaQuente = sensorQuente.getTempCByIndex(0);
+        Serial.print("Temp. Água Quente: "); Serial.println(temperaturaQuente);
+
+        float leituraADC = analogRead(sinalSensor);
+        // Cálculo utilizado na vida real para capturar a tensão DC gerada pelas Placas Peltiers
+        // float voltage = (float)analogRead(sinalSensor) / 4096 * 15 * 28205 * 1.725 / 27000;
+        float voltage = leituraADC / 4095.0 * 3.3;
+        Serial.print("Tensão: "); Serial.println(voltage, 2);
+
+        mostrarLCD(" Agua Fria", temperaturaFria, 0);
+        mostrarLCD(" Agua Quente", temperaturaQuente, 1);
+        mostrarLCD(" Tensao", voltage, 2);
+        mostrarLocalizacao(country, city);
+        
+        enviarParaThingSpeak(latitude, longitude, city, country, temperaturaFria, temperaturaQuente, voltage);
+      } else {
+        Serial.print("Erro ao processar JSON: ");
+        Serial.println(error.f_str());
+      }
+    } else {
+      Serial.print("Erro na requisição HTTP: ");
+      Serial.println(httpResponseCode);
+    }
+    http.end();
+  } else {
+    Serial.println("Erro na conexão Wi-Fi");
+  }
+  delay(15000); 
+}
+
+void mostrarLCD(String titulo, float valor, int tipo) {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.write((byte)tipo);  
+  lcd.print(titulo);
+  lcd.setCursor(0, 1);
+  lcd.print("Valor: ");
+  lcd.print(valor, 2);
+  lcd.print(tipo == 2 ? "V" : "C");
+  delay(5000);  
+}
+
+void mostrarLocalizacao(String country, String city) {
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.write((byte)4);  
+  lcd.print(" ");      
+  lcd.print(country);  
+  lcd.setCursor(0, 1);
+  lcd.print(city);     
+  delay(5000);         
+}
+
+void enviarParaThingSpeak(float latitude, float longitude, String city, String country, float tempFria, float tempQuente, float voltage) {
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    city.replace(" ", "%20");
+    country.replace(" ", "%20");
+
+    String url = String(thingspeakURL) + "?api_key=" + thingspeakApiKey +
+                 "&field1=" + String(latitude, 6) +
+                 "&field2=" + String(longitude, 6) +
+                 "&field3=" + city +
+                 "&field4=" + country +
+                 "&field5=" + String(tempFria, 1) +
+                 "&field6=" + String(tempQuente, 1) +
+                 "&field7=" + String(voltage, 2);
+
+    http.begin(url);
+    int httpResponseCode = http.GET();
+
+    if (httpResponseCode > 0) {
+      Serial.print("Dados enviados para o ThingSpeak com sucesso! Código: ");
+      Serial.println(httpResponseCode);
+    } else {
+      Serial.print("Erro ao enviar dados para o ThingSpeak! Código: ");
+      Serial.println(httpResponseCode);
+    }
+    http.end();
+  }
+}
+```
 
 ## 📋 Licença
 
