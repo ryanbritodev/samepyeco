@@ -173,7 +173,7 @@ No início do código, adicione todas as bibliotecas previamente instaladas:
 ### [Circuito feito no Simulador Wokwi](https://wokwi.com/projects/414535310108324865)
 <img src="assets/wokwi.png" width="60%" alt="Wokwi Simulation"/>
 
-O código principal utilizado no ESP32 foi desenvolvido em C++, e é responsável por criar o algoritmo que realiza a leitura de todos os dados, enviando através de uma conexão Wi-Fi, para nuvem no Thingspeak. Aqui está o código utilizado no projeto:
+O código principal utilizado no ESP32 foi desenvolvido em C++, e é responsável por criar o algoritmo que realiza a leitura de todos os dados, enviando através de uma conexão Wi-Fi para nuvem no Thingspeak. Aqui está o código utilizado no projeto:
 
 ```cpp
 #include <WiFi.h>
