@@ -34,16 +34,16 @@ A pastilha de Peltier foi escolhida como a tecnologia central do projeto devido 
 ## 🍃 Impacto Positivo
 O SamepyEco promove uma energia mais limpa e sustentável, ajudando a reduzir a dependência de combustíveis fósseis e diminuindo emissões de CO₂. Ele pode beneficiar:
 
-- Comunidades Remotas: Proporcionando energia onde redes elétricas não alcançam.
-- Indústrias: Reaproveitando calor residual, reduzindo custos operacionais.
-- Meio Ambiente: Mitigando os efeitos das mudanças climáticas ao fomentar o uso de fontes renováveis.
+- **Comunidades Remotas:** Proporcionando energia onde redes elétricas não alcançam.
+- **Indústrias:** Reaproveitando calor residual, reduzindo custos operacionais.
+- **Meio Ambiente:** Mitigando os efeitos das mudanças climáticas ao fomentar o uso de fontes renováveis.
 
 ## 📈 Escalabilidade
-O SamepyECO pode ser aplicado em diferentes contextos:
+O SamepyEco pode ser aplicado em diferentes contextos:
 
-Doméstico: Pequenos sistemas para residências.
-Industrial: Grandes instalações para recuperação de calor residual.
-Rural: Estações de geração de energia em regiões remotas, usando calor solar.
+- **Doméstico:** Pequenos sistemas para residências.
+- **Industrial:** Grandes instalações para recuperação de calor residual.
+- **Rural:** Estações de geração de energia em regiões remotas, usando calor solar.
 
 
 ## 🌡️❄️ Como Funciona a Geração de Energia com a Pastilha de Peltier? 
@@ -365,5 +365,4 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 - Gostaríamos de agradecer à **FIAP** e ao professor **Paulo Marcotti** pela oportunidade incrível de realizar esse projeto.
 
 ## Licença
-
 Este projeto está licenciado sob a **Licença MIT** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
