@@ -67,7 +67,7 @@ O coeficiente Seebeck é uma propriedade intrínseca dos materiais termoelétric
 Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na conversão de calor em eletricidade. Por isso, materiais avançados como ligas de bismuto-telúrio são frequentemente usados em módulos Peltier de alta eficiência.
 
 ## 🔌 Componentes
-<img src="assets/componentes-circuito.png" width="60%" alt="Componentes"/>
+<img src="assets/componentes-circuito.png" width="70%" alt="Componentes"/>
 
 - 1 ESP32
 - 1 Protoboard
@@ -82,6 +82,10 @@ Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na c
 - 1 Power Bank
 - Jumper Cables
 
+### Todos os componentes eletrônicos foram adquiridos na loja de eletrônicos [Saravati](https://www.saravati.com.br/), localizada na Rua Vitória Número 39, no Bairro da Santa Ifigênia em São Paulo. Gostaríamos de agradecer a equipe da Saravati pelo rápido atendimento e pelo desconto especial oferecido aos alunos da FIAP 😄
+
+<img src="assets/saravati.jpg" width="35%" alt="Saravati"/>
+
 ## ⚒️ Montagem
 <div>
  <img src="assets/circuito.jpg" width="35%" alt="Circuito"/>
@@ -91,7 +95,35 @@ Quanto maior o coeficiente Seebeck de um material, mais eficiente ele será na c
 
 <br>
 
-Criamos um protótipo que demonstra como a energia pode ser gerada de forma sustentável utilizando o diferencial de temperatura. O sistema utiliza as pastilhas Peltier posicionadas entre os dois recipientes (formas de bolo feitas de alumínio): um com água quente e outro com água fria. O calor da água quente aquece um lado das pastilhas, enquanto a água fria resfria o outro, criando um gradiente térmico que gera energia elétrica. No protótipo, essa energia é usada para alimentar um pisca-pisca instalado na cerca de uma casinha, ilustrando o funcionamento do sistema de forma prática. Para criar o monitoramento, utilizamos um ESP32 abastecido por um Power Bank, que registra as temperaturas dos recipientes com sensores DS18B20 e mede a tensão gerada por meio de um sensor DC 0-25V. Os dados são exibidos em tempo real em um display LCD, permitindo acompanhar a eficiência do sistema enquanto ele funciona.
+Criamos um protótipo que demonstra como a energia pode ser gerada de forma sustentável utilizando o diferencial de temperatura. O sistema utiliza as pastilhas Peltier posicionadas entre os dois recipientes (formas de bolo feitas de alumínio): um com água quente e outro com água fria. O calor da água quente aquece um lado das pastilhas, enquanto a água fria resfria o outro, criando um gradiente térmico que gera energia elétrica (entre os recipientes, utilizamos uma pasta térmica que auxilia na troca de calor). No protótipo, essa energia é usada para alimentar um pisca-pisca instalado na cerca de uma casinha, ilustrando o funcionamento do sistema de forma prática. Para criar o monitoramento, utilizamos um ESP32 abastecido por um Power Bank, que registra as temperaturas dos recipientes com sensores DS18B20 e mede a tensão gerada por meio de um sensor DC 0-25V. Os dados são exibidos em tempo real em um display LCD e enviados através do protocolo HTTP ao ThingSpeak, permitindo acompanhar a eficiência do sistema em tempo real enquanto ele funciona.
+
+## 📊 Canal de Processamento de Dados no Thingspeak
+<div>
+ <img src="assets/thingspeak.png" width="35%" alt="Thingspeak"/>
+ <img src="assets/samepyeco-thingspeak.png" width="25.6%" alt="SamepyEco Thingspeak"/>
+</div>
+Nosso sistema integra o monitoramento local com o envio de dados para a plataforma oficial da Samepy utilizando o ESP32 e o ThingSpeak. Esses dados são coletados, tratados e enviados para análise e acompanhamento remoto:
+
+### Coleta de Dados
+#### Dados de Localização:
+- Os dados de latitude, longitude, cidade e país são capturados utilizando a API da [ipgeolocation.io](https://ipgeolocation.io/). Essa API utiliza informações da rede Wi-Fi conectada ao ESP32 para determinar a localização geográfica do dispositivo, eliminando a necessidade de sensores GPS adicionais.
+<img src="assets/ipgeolocation.png" width="35%" alt="IP Geolocation"/>
+
+#### Temperaturas da Água:
+- As temperaturas do lado frio e do lado quente das pastilhas Peltier são monitoradas por sensores de temperatura DS18B20. Esses dados são lidos pelo ESP32 em tempo real para avaliar a diferença térmica (ΔT) no sistema.
+
+#### Tensão Gerada:
+- O sensor de tensão DC 0-25V mede a energia elétrica gerada pelas pastilhas. Esse valor também é processado pelo ESP32.
+
+## 🔗 Fields:
+### [Canal SamepyEco no Thingspeak](https://thingspeak.mathworks.com/channels/2738000)
+- Field 1: Latitude
+- Field 2: Longitude
+- Field 3: Cidade
+- Field 4: País
+- Field 5: Temperatura (Água Fria)
+- Field 6: Temperatura (Água Quente)
+- Field 7: Tensão
 
 ## 📁 Estrutura de pastas
 
