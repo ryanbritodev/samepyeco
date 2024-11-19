@@ -148,6 +148,10 @@ Nosso sistema integra o monitoramento local com o envio de dados para a platafor
 - Field 6: Temperatura (Água Quente)
 - Field 7: Tensão
 
+## 🌐 Plataforma Web
+### [Acesse por aqui!](https://samepy-eco.vercel.app/)
+<img src="assets/home-samepy.png" width="60%" alt="Plataforma"/>
+
 ## 📊 Diagrama
 <img src="assets/diagrama-caso.jpg" width="60%" alt="Diagrama"/>
 
@@ -374,6 +378,7 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 <a href="https://youtu.be/r6GwW2UTQUQ"><img src="assets/video-thumb.png" width="80%" alt="Vídeo YT"/></a>
 
 ## 📖 Referências:
+- Documentação Oficial do Projeto: https://docs.google.com/document/d/14aTxU3KLMaT4ZVTnTMrUyKxX3Qt2W2VzvJ271n5L1-k/edit?usp=sharing
 - Site Oficial Global Solution Green Energy: https://www.fiap.com.br/graduacao/global-solution/
 - Como Utilizar o Sensor DS18B20 com Arduino e ESP32 – Tutorial Completo: https://www.youtube.com/watch?v=Vy650KLXIyY&t=36s
 - Como utilizar Sensor de Tensão 0-25V DC e Como fazer Voltímetro com Arduino - Tutorial 50: https://www.youtube.com/watch?v=Kw7VUpQ-2vY&t=2s
