@@ -363,6 +363,10 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 }
 ```
 
+## 📽️ Vídeo do Projeto
+
+<a href="https://youtu.be/r6GwW2UTQUQ"><img src="assets/gs-yt.png" width="60%" alt="Vídeo YT"/></a>
+
 ## 📖 Referências:
 - Site Oficial Global Solution Green Energy: https://www.fiap.com.br/graduacao/global-solution/
 - Como Utilizar o Sensor DS18B20 com Arduino e ESP32 – Tutorial Completo: https://www.youtube.com/watch?v=Vy650KLXIyY&t=36s
