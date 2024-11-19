@@ -148,6 +148,9 @@ Nosso sistema integra o monitoramento local com o envio de dados para a platafor
 - Field 6: Temperatura (Água Quente)
 - Field 7: Tensão
 
+## 📊 Diagrama
+<img src="assets/diagrama-caso.jpg" width="60%" alt="Diagrama"/>
+
 ## 📁 Dependências
 
 <img src="assets/arduino-ide.png" width="60%" alt="Arduino IDE"/>
