@@ -117,6 +117,9 @@ Criamos um protótipo que demonstra como a energia pode ser gerada de forma sust
  <img src="assets/peltier-pasta.jpg" width="14.8%" alt="Peltier com Pasta Térmica"/>
 </div>
 
+## 💡 Resultado
+<img src="assets/resultado.jpg" width="60%" alt="Resultado"/>
+
 ## 📊 Canal de Processamento de Dados no Thingspeak
 <div>
  <img src="assets/thingspeak.png" width="35%" alt="Thingspeak"/>
@@ -365,7 +368,7 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 
 ## 📽️ Vídeo do Projeto
 
-<a href="https://youtu.be/r6GwW2UTQUQ"><img src="assets/gs-yt.png" width="60%" alt="Vídeo YT"/></a>
+<a href="https://youtu.be/r6GwW2UTQUQ"><img src="assets/gs-yt.png" width="80%" alt="Vídeo YT"/></a>
 
 ## 📖 Referências:
 - Site Oficial Global Solution Green Energy: https://www.fiap.com.br/graduacao/global-solution/
