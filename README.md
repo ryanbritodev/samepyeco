@@ -379,7 +379,7 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 
 ## 🦈 Pitch
 
-<a href="https://youtu.be/r8Rkved31Ug"><img src="assets/pitch-gs.png" width="80%" alt="Pitch"/></a>
+<a href="https://youtu.be/r8Rkved31Ug"><img src="assets/pitch-gs-novo.png" width="80%" alt="Pitch"/></a>
 
 ## 📖 Referências:
 - Documentação Oficial do Projeto: https://docs.google.com/document/d/14aTxU3KLMaT4ZVTnTMrUyKxX3Qt2W2VzvJ271n5L1-k/edit?usp=sharing
