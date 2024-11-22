@@ -377,6 +377,10 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 
 <a href="https://youtu.be/r6GwW2UTQUQ"><img src="assets/video-thumb.png" width="80%" alt="Vídeo YT"/></a>
 
+## 🦈 Pitch
+
+<a href="https://youtu.be/r8Rkved31Ug"><img src="assets/pitch-gs.png" width="80%" alt="Pitch"/></a>
+
 ## 📖 Referências:
 - Documentação Oficial do Projeto: https://docs.google.com/document/d/14aTxU3KLMaT4ZVTnTMrUyKxX3Qt2W2VzvJ271n5L1-k/edit?usp=sharing
 - Site Oficial Global Solution Green Energy: https://www.fiap.com.br/graduacao/global-solution/
