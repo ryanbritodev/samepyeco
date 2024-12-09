@@ -391,7 +391,7 @@ void enviarParaThingSpeak(float latitude, float longitude, String city, String c
 - Pequeno Dispositivo Para Puxar Água Acionado por Mine Gerador Termoelétrico: https://youtu.be/6PZ9-6zow2M?si=0dqdfydpMLmBOOF0
 
 
-## 🫱🏻‍🫲🏻 Agradecimentos
+## 🤝 Agradecimentos
 - Gostaríamos de agradecer à **FIAP** e ao professor **Paulo Marcotti** pela oportunidade incrível de realizar esse projeto.
 
 ## 🧾 Licença
